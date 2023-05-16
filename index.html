@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Igazolásigénylő</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1 id="title">Igazolásigénylő</h1>
+    <h3 id="institute-name">Nagyiratosi Plébánia</h3>
+    <p id="description">Adja meg a kért adatokat az igazolás kiállításához!</p>
+  </header>
+
+  <form id="surveyform" action="https://formsubmit.co/bodor.attila@icloud.com" method="POST">
+    <fieldset>
+        <label id="name-label" for="name"><strong>Név:</strong> <input id="name" name="name" type="text" placeholder="Az igazolást kérő személy vezeték- és keresztnév" required /></label>
+        <label id="email-label" for="email"><strong>Email:</strong> <input id="email" name="email" type="email" placeholder="Az igazolást kérő személy email címe" required /></label>
+    </fieldset>
+
+    <fieldset>
+        <h4 id="certificate-type">Milyen igazolásra van szüksége?</h4>
+        <label id="godparent-certificate" for="godparent-certificate"><input id="godparent-certificate" value="godparent-certificate" type="radio" name="certificate-type" class="inline" /> Keresztszülői igazolás</label>
+        <label id="conformation-sponsor-certificate" for="conformation-sponsor-certificate"><input id="conformation-sponsor-certificate" value="conformation-sponsor-certificate" type="radio" name="certificate-type" class="inline" /> Bérmaszülői igazolás</label>
+        <label id="letter-free-marry-certificate" for="letter-free-marry-certificate"><input id="letter-free-marry-certificate" value="letter-free-marry-certificate" type="radio" name="certificate-type" class="inline" /> Házassági szabadállapot igazolás</label>
+        <label id="baptism-certificate" for="baptism-certificate"><input id="baptism-certificate" value="baptism-certificate" type="radio" name="certificate-type" class="inline" /> Keresztelési igazolás</label>
+        <label id="confirmation-certificate" for="confirmation-certificate"><input id="confirmation-certificat" value="confirmation-certificat" type="radio" name="certificate-type" class="inline" /> Bérmálási igazolás</label>
+        <label id="marry-certificate" for="marry-certificate"><input id="marry-certificat" value="marry-certificat" type="radio" name="certificate-type" class="inline" /> Házassági igazolás</label>
+        <label id="funeral-certificate" for="funeral-certificate"><input id="funeral-certificat" value="funeral-certificat" type="radio" name="certificate-type" class="inline" /> Temetési igazolás</label>
+        <label id="church-member-certificate" for="church-member-certificate"><input id="church-member-certificate" value="church-member-certificate" type="radio" name="certificate-type" class="inline" /> Egyháztagsági igazolás</label>
+    </fieldset>
+
+    <fieldset>
+        <h4 id="client-data">Az igazolás kiállításához szükséges adatok:</h4>
+        <label id="name-label" for="client-name">Név: <input id="client-name" name="client-name" type="text" placeholder="Annak a személynek a család- és keresztneve, akire az igazolás vonatkozik" required /></label>
+        <label id="address-label" for="client-address">Lakhely <input id="client-address" name="client-address" type="text" placeholder="Annak a személynek az aktuális/utolsó lakhelye, akire az igazolás vonatkozik" required /></label>
+        <label id=job-label for="client-job">Foglalkozás <input id="client-job" name="client-job" type="text" placeholder="Elhunyt/idős/munkanélküli személy esetében a korábbi foglalkozás, amennyiben volt" /></label>
+        <label for="petition">Az igényelt igazolás bizonyítja</label>
+          <select id="petition" name="petition" required>
+            <option disabled selected value="">(válasszon egyet az alábbiak közül)</option>
+            <option value="alkalmas a keresztszülőnek">alkalmas a keresztszülőnek</option>
+            <option value="alkalmas bérmaszülőnek">alkalmas bérmaszülőnek</option>
+            <option value="szabadállapotú">szabadállapotú (nincs előző, bejegyzett házasságkötése a plébánián)</option>
+            <option value="meg volt keresztelve ezen a plébánián">meg volt keresztelve ezen a plébánián</option>
+            <option value="meg volt bérmálva ezen a plébánián">meg volt bérmálva ezen a plébánián</option>
+            <option value="egyházi házasságot kötött ezen a plébánián">egyházi házasságot kötött ezen a plébánián</option>
+            <option value="eltemették ennek a plébániának a területén">eltemették ennek a plébániának a területén</option>
+            <option value="ennek a plébániának az aktív tagja">ennek a plébániának az aktív tagja</option>
+          </select>
+        <label id="info-label" for="client-information">Az igazolás kiállításához szükséges egyéb adatok <input id="info" name="client-information" type="text" placeholder="Pl. a keresztelés/bérmálás/temetés helye és ideje" required /></label>
+        <label id="number-label" for="number">Utolsó egyházi hozzájárulás éve<input id="number" type="number" name="invoice" min="2000" max="2030" placeholder="Az igazolás kiállításának feltétele, hogy az igazolást kérő személy a plébániához tartozik és rendszeresen fizeti az évi egyházi hozzájárulást"/></label>
+        <label id="doc-label" for="invoice-doc">Töltse fel az utolsó egyházi hozzájárulás bizonylatát (ha van): <input id="invoice-doc" type="file" name="file" /></label>
+        <label id="comment-label" for="comment">Egyéb megjegyzések:
+          <textarea id="comment" name="comment" rows="3" cols="30" placeholder="Pl. Az igazolást kérném, legkésőbb .... dátumig kiállítani ..."></textarea>
+        </label>
+    </fieldset>
+    <br>
+    <label id="terms-and-conditions" for="terms-and-conditions">
+        <input id="terms-and-conditions" type="checkbox" name="terms-and-conditions" value="terms-and-conditions" class="inline" required />Elfogadom <a href="https://eur-lex.europa.eu/legal-content/HU/TXT/PDF/?uri=CELEX:32016R0679">az adatkezelési feltételeket</a>
+    </label>
+    <label id="data-archive" for="terms-and-conditions">
+      <input id="data-archive" type="checkbox" name="data-archive" value="data-archive" class="inline" required />Hozzájárulok, hogy ha szükséges a plébánia az adatok pontosítása érdekében kapcsolatba lépjen velem.</label>
+    <br>
+    <button type="submit" id="submit" class="submit-button">
+      Elküldés
+    </button>
+    </form>
+    <footer>
+      <p>©<em>bodevelop</em></p>
+      <br>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
